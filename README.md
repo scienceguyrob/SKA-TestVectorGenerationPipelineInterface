@@ -54,30 +54,30 @@ more test vectors siting in a directory somewhere, for which they would like a n
 
 2. A script that builds images describing the shape of an EPN data file pulse.
 
-	    The script CreatePulseProfilePng.py reads a directory filled with .asc files, and create plots using Matplotlib.
-	    The plots are written out to a PNG file. These PNGs are then used during the HTML page building process, to provide
-	    a visual indication of what type of pulse is in each test vector.
+    The script CreatePulseProfilePng.py reads a directory filled with .asc files, and create plots using Matplotlib.
+	The plots are written out to a PNG file. These PNGs are then used during the HTML page building process, to provide
+	a visual indication of what type of pulse is in each test vector.
 
 3. A HTML page building application.
 
-        There are two scripts involved in this process:
+    There are two scripts involved in this process:
 
-	    PageBuilder.py
-	    PageBuilderApp.py
+	PageBuilder.py
+	PageBuilderApp.py
 
-	    You should execute the PageBuilderApp.py script.
+	You should execute the PageBuilderApp.py script.
 
-	    Together, these have a couple of jobs.
+	Together, these have a couple of jobs.
 
-	    The scripts read the test vector database file, and use this information to build a working summary webpage. As
-	    I didn't want to get into the nitty gritty of web-design for such a simple page, I recycled old code.
+	The scripts read the test vector database file, and use this information to build a working summary webpage. As
+	I didn't want to get into the nitty gritty of web-design for such a simple page, I recycled old code.
 
-	    I took a webpage I built in the past, which had a simple table structure which was easy to view. This table is
-	    dynamic, and has nice search features. So using it makes it easy to search for test vectors. To make this work,
-	    all we need to do is replace the original table data HTML, with new table data HTML describing the test vectors.
+	I took a webpage I built in the past, which had a simple table structure which was easy to view. This table is
+	dynamic, and has nice search features. So using it makes it easy to search for test vectors. To make this work,
+	all we need to do is replace the original table data HTML, with new table data HTML describing the test vectors.
 
-	    The code simply splices together old HTML, with dynamically generated table data entries (based on the data in
-	    the test vector database file), producing a working webpage.
+	The code simply splices together old HTML, with dynamically generated table data entries (based on the data in
+	the test vector database file), producing a working webpage.
 
 ### Hosting
 
