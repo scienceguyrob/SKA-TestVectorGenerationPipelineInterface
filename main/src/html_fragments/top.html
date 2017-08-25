@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Page written by Rob Lyon. Based on initial page design by the good people at Dynatable.      -->
+    <title>Zeus: Available Test Vectors</title>
+    <meta property="og:title" content="SKA Test Vectors" />
+    <meta property="og:description" content="The test vectors available for use" />
+
+    <!-- css files for the table and the page -->
+    <link rel="stylesheet" media="all" href="table/bootstrap-2.3.2.min.css" />
+    <link rel="stylesheet" media="all" href="table/main.css" />
+    <link rel="stylesheet" media="all" href="table/table.css" />
+
+    <!-- scripts which generate the table -->
+    <script type='text/javascript' src='vendor/jquery-2.1.3.min.js'></script>
+    <script type='text/javascript' src='table/jquery.dynatable.js'></script>
+    <script src="popup/jquery.popupoverlay.js"></script>
+</head>
+
+<body>
+<!--Define area at top of the page. -->
+<div id='splashbar'>
+    <div class=''>
+        <div class="splash-right">
+            <h1 id="title"><img alt="" src="images/SurveyTelescopes_horiz_small.png" /> SKA Test Vectors</h1>
+            <p id="description">A listing of all the test vectors currently available.</p>
+        </div>
+    </div>
+</div>
+<div id='tagbar' class='homepage'>
+    <div class='contained'>
+        <div id='share-container'>
+        </div>
+    </div>
+</div>
+<div id='post_1'>
+    <div id='post_1'>
+        <h1>Overview</h1>
+        <p> All the test vectors (@TOTAL@) available for download are listed here. If you need a different vector, please get in touch with me via
+            <script>
+            var username = "robert.lyon";
+            var hostname = "manchester.ac.uk";
+            var linktext = username + "@" + hostname ;
+            document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + ".com'>" + linktext + "</a>");
+            </script>.
+            All the test vectors summarised below are also described in a separate test vector database CSV file. You can get that file <a href='TestVectorDB.csv'>here</a>.
+            The file format is described at the bottom of the page.
+
+        </p>
+        <p>
+            Each test vector in the table below can be recreated using the <a href="https://hub.docker.com/r/scienceguyrob/docker/" target="_blank">Test Vector docker environment</a>.
+            The code used to generate that environment can be found <a href="https://github.com/scienceguyrob/SKA-TestVectorGenerationPipeline" target="_blank">here</a>, whilst the
+            code used to generate this site, can be found <a href="https://github.com/scienceguyrob/SKA-TestVectorGenerationPipelineInterface" target="_blank">here</a>.
+        </p>
+        <p>
+            Note that each vector is associated with a batch number. You can find the exact processing steps applied to a test vector,
+            by clicking on the batch number. The images in the EPN Template table column, show the shape of the pulse profile inserted into
+            each test vector.  Descriptions of the columns in the table are provided at the bottom of the page. The test vector generation
+            procedure is summarised in the Appendices of the <em>SKA CSP Pulsar Search Sub-element Detailed Design Document (ED-4a)</em>. A PDF version
+            of the relevant Appendix is available <a href="docs/DDDAppendixTestVectorGeneration_REVIEWED.pdf" target="_blank">here</a>.
+        </p>
+    </div>
+    <div id='content_1' class='contained'>
+    <div id='post_2'>
+        <div class="dynatable-demo">
+            <table id="spec_table" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Batch</th>
+                    <th>Period (ms)</th>
+                    <th>DM</th>
+                    <th>Accel.</th>
+                    <th>S/N</th>
+                    <th>EPN Template</th>
+                    <th>EPN Freq. (MHz)</th>
+                    <th>File</th>
+                    <th>Size GB</th>
+                    <th>MD5 Hash</th>
+                    <th>Size Bits</th>
+                </tr>
+                </thead>

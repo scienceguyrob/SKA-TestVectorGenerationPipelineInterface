@@ -1,0 +1,14 @@
+Description:
+
+This is a fake batch. It contains some example information only.
+
+Tobs: 600
+Tsamp: 64
+Fc: 1400
+Fh: 1500
+Fch1: 1300
+deltav: 78
+B: 200
+Nchan: 1000
+Nbit: 8
+Seed: 1

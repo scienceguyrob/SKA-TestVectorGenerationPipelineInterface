@@ -1,0 +1,46 @@
+            </table>
+        </div>
+        <!--  Javascript for table interactivity, do not delete. -->
+        <script type="text/javascript">
+            $('#spec_table').dynatable();
+        </script>
+        <h2>Column Descriptions</h2>
+        <p>Brief descriptions of what each column of the table contains.</p>
+            <p><b>Type</b> - the type of test vector. A 'RealPulsar' describes a test vector with a genuine integrated
+                pulse profile taken from the EPN database, with the correct period, DM and acceleration values that
+                correspond to the real detection. A 'FakePulsar' describes a test vector which also has a genuine integrated
+                pulse profile taken from the EPN database, but period, DM and acceleration values which do not correspond
+                to the real detection. This then produces a fake pulsar example.
+            </p>
+            <p><b>Batch</b> - The batch the test vector was generated in, where the batch corresponds to a batch number.
+                All test vectors should be associated with a batch, to ensure reproducibility.
+            </p>
+            <p><b>Period (ms)</b> - the period in milliseconds of the pulse injected into the test vector, using the
+                <em>inject_pulsar</em> tool.
+            </p>
+            <p><b>DM</b> - the Dispersion Measure (DM) used by the <em>inject_pulsar</em> tool.
+            </p>
+            <p><b>Accel.</b> - the acceleration applied to the pulsar in the test vector.
+            </p>
+            <p><b>S/N</b> - the S/N value used by the <em>inject_pulsar</em> tool.
+            </p>
+            <p><b>EPN Template</b> - the EPN database file used. This file describes the integrated pulse profile of a real
+                pulsar observed at some observing frequency.
+            </p>
+            <p><b>EPN Freq. (MHz)</b> - the frequency at which the chosen EPN database profile was observed.
+            </p>
+            <p><b>File</b> - the path to the test vector.
+            </p>
+            <p><b>Size GB</b> - the size of the test vector in Gigabytes (GB).
+            </p>
+            <p><b>MD5 Hash</b> - the MD5 hash value for the test vector. Useful for checking downloaded vectors are valid.
+            </p>
+            <p><b>Size Bits</b> - the size of the test vector in bits.
+            </p>
+        <h2>Test Vector Database File</h2>
+            <p>For now this is a simple CSV file.</p>
+            <p>The format is as follows:</p>
+            <p>&lt;Filename&gt;,&lt;Batch&gt;,&lt;Type&gt;,&lt;Period (ms)&gt;,&lt;DM&gt;,&lt;Accel.&gt;,&lt;S/N&gt;,&lt;EPN Pulsar&gt;,&lt;EPN Freq.&gt;,&lt;Path&gt;,&lt;Parent Dir&gt;,&lt;Size Bits&gt;,&lt;Size GB&gt;,&lt;MD5&gt;</p>
+            <p>There is no CSV header.</p>
+    </div>
+</div>

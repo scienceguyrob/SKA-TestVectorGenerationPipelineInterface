@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Page written by Rob Lyon. Based on initial page design by the good people at Dynatable.      -->
+    <title>Zeus: Available Test Vectors</title>
+    <meta property="og:title" content="SKA Test Vectors" />
+    <meta property="og:description" content="The test vectors available for use" />
+
+    <!-- css files for the table and the page -->
+    <link rel="stylesheet" media="all" href="table/bootstrap-2.3.2.min.css" />
+    <link rel="stylesheet" media="all" href="table/main.css" />
+    <link rel="stylesheet" media="all" href="table/table.css" />
+
+    <!-- scripts which generate the table -->
+    <script type='text/javascript' src='vendor/jquery-2.1.3.min.js'></script>
+    <script type='text/javascript' src='table/jquery.dynatable.js'></script>
+    <script src="popup/jquery.popupoverlay.js"></script>
+</head>
+
+<body>
+<!--Define area at top of the page. -->
+<div id='splashbar'>
+    <div class=''>
+        <div class="splash-right">
+            <h1 id="title"><img alt="" src="images/SurveyTelescopes_horiz_small.png" /> SKA Test Vectors</h1>
+            <p id="description">A listing of all the test vectors currently available.</p>
+        </div>
+    </div>
+</div>
+<div id='tagbar' class='homepage'>
+    <div class='contained'>
+        <div id='share-container'>
+        </div>
+    </div>
+</div>
+<div id='post_1'>
+    <div id='post_1'>
+        <h1>Overview</h1>
+        <p> All the test vectors (4) available for download are listed here. If you need a different vector, please get in touch with me via
+            <script>
+            var username = "robert.lyon";
+            var hostname = "manchester.ac.uk";
+            var linktext = username + "@" + hostname ;
+            document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + ".com'>" + linktext + "</a>");
+            </script>.
+            All the test vectors summarised below are also described in a separate test vector database CSV file. You can get that file <a href='TestVectorDB.csv'>here</a>.
+            The file format is described at the bottom of the page.
+
+        </p>
+        <p>
+            Each test vector in the table below can be recreated using the <a href="https://hub.docker.com/r/scienceguyrob/docker/" target="_blank">Test Vector docker environment</a>.
+            The code used to generate that environment (and this site) can be found <a href="https://github.com/scienceguyrob/SKA-TestVectorGenerationPipeline" target="_blank">here</a>.
+            Note that each vector is associated with a batch number. You can find the exact processing steps applied to a test vector,
+            by clicking on the batch number. The images in the EPN Template table column, show the shape of the pulse profile inserted into
+            each test vector.  Descriptions of the columns in the table are provided at the bottom of the page. The test vector generation
+            procedure is summarised in the Appendices of the <em>SKA CSP Pulsar Search Sub-element Detailed Design Document (ED-4a)</em>. A PDF version
+            of the relevant Appendix is available <a href="docs/DDDAppendixTestVectorGeneration_REVIEWED.pdf" target="_blank">here</a>.
+        </p>
+    </div>
+    <div id='content_1' class='contained'>
+    <div id='post_2'>
+        <div class="dynatable-demo">
+            <table id="spec_table" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Batch</th>
+                    <th>Period (ms)</th>
+                    <th>DM</th>
+                    <th>Accel.</th>
+                    <th>S/N</th>
+                    <th>EPN Template</th>
+                    <th>EPN Freq. (MHz)</th>
+                    <th>File</th>
+                    <th>Size GB</th>
+                    <th>MD5 Hash</th>
+                    <th>Size Bits</th>
+                </tr>
+                </thead>	<tr>
+		<td>FakePulsar</td>
+		<td><a href="#" onclick="$('#batch_pop_1').popup('show');">1</a></td>
+		<td>0.1</td>
+		<td>10</td>
+		<td>0.0</td>
+		<td>15</td>
+		<td><span class="flagicon"><img alt=J0006+1834_430 src="data/ASC/J0006+1834_430.png"  width="128" height="128" class="thumbborder" />&#160;</span>J0006+1834_430</td>
+		<td>430</td>
+		<td><a href='./data/vectors/FakePulsar_1_0.1_10_0.0_15_J0006+1834_430.fil'>FakePulsar_1_0.1_10_0.0_15_J0006+1834_430.fil</a></td>
+		<td>1e-09</td>
+		<td>c4ca4238a0b923820dcc509a6f75849b
+</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>FakePulsar</td>
+		<td><a href="#" onclick="$('#batch_pop_1').popup('show');">1</a></td>
+		<td>0.2</td>
+		<td>10</td>
+		<td>+1.1</td>
+		<td>15</td>
+		<td><span class="flagicon"><img alt=J0014+4746_102 src="data/ASC/J0014+4746_102.png"  width="128" height="128" class="thumbborder" />&#160;</span>J0014+4746_102</td>
+		<td>102</td>
+		<td><a href='./data/vectors/FakePulsar_1_0.2_10_+1.1_15_J0014+4746_102.fil'>FakePulsar_1_0.2_10_+1.1_15_J0014+4746_102.fil</a></td>
+		<td>1e-09</td>
+		<td>c81e728d9d4c2f636f067f89cc14862c
+</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>FakePulsar</td>
+		<td><a href="#" onclick="$('#batch_pop_1').popup('show');">1</a></td>
+		<td>0.2</td>
+		<td>10</td>
+		<td>+1.1</td>
+		<td>15</td>
+		<td><span class="flagicon"><img alt=J0014+4746_142 src="data/ASC/J0014+4746_142.png"  width="128" height="128" class="thumbborder" />&#160;</span>J0014+4746_142</td>
+		<td>142</td>
+		<td><a href='./data/vectors/FakePulsar_1_0.2_10_+1.1_15_J0014+4746_142.fil'>FakePulsar_1_0.2_10_+1.1_15_J0014+4746_142.fil</a></td>
+		<td>1e-09</td>
+		<td>c81e728d9d4c2f636f067f89cc14862c
+</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>FakePulsar</td>
+		<td><a href="#" onclick="$('#batch_pop_1').popup('show');">1</a></td>
+		<td>0.3</td>
+		<td>10</td>
+		<td>-2.2</td>
+		<td>15</td>
+		<td><span class="flagicon"><img alt=J0014+4746_408 src="data/ASC/J0014+4746_408.png"  width="128" height="128" class="thumbborder" />&#160;</span>J0014+4746_408</td>
+		<td>408</td>
+		<td><a href='./data/vectors/FakePulsar_1_0.3_10_-2.2_15_J0014+4746_408.fil'>FakePulsar_1_0.3_10_-2.2_15_J0014+4746_408.fil</a></td>
+		<td>1e-09</td>
+		<td>eccbc87e4b5ce2fe28308fd9f2a7baf3
+</td>
+		<td>8</td>
+	</tr>
+            </table>
+        </div>
+        <!--  Javascript for table interactivity, do not delete. -->
+        <script type="text/javascript">
+            $('#spec_table').dynatable();
+        </script>
+        <h2>Column Descriptions</h2>
+        <p>Brief descriptions of what each column of the table contains.</p>
+            <p><b>Type</b> - the type of test vector. A 'RealPulsar' describes a test vector with a genuine integrated
+                pulse profile taken from the EPN database, with the correct period, DM and acceleration values that
+                correspond to the real detection. A 'FakePulsar' describes a test vector which also has a genuine integrated
+                pulse profile taken from the EPN database, but period, DM and acceleration values which do not correspond
+                to the real detection. This then produces a fake pulsar example.
+            </p>
+            <p><b>Batch</b> - The batch the test vector was generated in, where the batch corresponds to a batch number.
+                All test vectors should be associated with a batch, to ensure reproducibility.
+            </p>
+            <p><b>Period (ms)</b> - the period in milliseconds of the pulse injected into the test vector, using the
+                <em>inject_pulsar</em> tool.
+            </p>
+            <p><b>DM</b> - the Dispersion Measure (DM) used by the <em>inject_pulsar</em> tool.
+            </p>
+            <p><b>Accel.</b> - the acceleration applied to the pulsar in the test vector.
+            </p>
+            <p><b>S/N</b> - the S/N value used by the <em>inject_pulsar</em> tool.
+            </p>
+            <p><b>EPN Template</b> - the EPN database file used. This file describes the integrated pulse profile of a real
+                pulsar observed at some observing frequency.
+            </p>
+            <p><b>EPN Freq. (MHz)</b> - the frequency at which the chosen EPN database profile was observed.
+            </p>
+            <p><b>File</b> - the path to the test vector.
+            </p>
+            <p><b>Size GB</b> - the size of the test vector in Gigabytes (GB).
+            </p>
+            <p><b>MD5 Hash</b> - the MD5 hash value for the test vector. Useful for checking downloaded vectors are valid.
+            </p>
+            <p><b>Size Bits</b> - the size of the test vector in bits.
+            </p>
+        <h2>Test Vector Database File</h2>
+            <p>For now this is a simple CSV file.</p>
+            <p>The format is as follows:</p>
+            <p>&lt;Filename&gt;,&lt;Batch&gt;,&lt;Type&gt;,&lt;Period (ms)&gt;,&lt;DM&gt;,&lt;Accel.&gt;,&lt;S/N&gt;,&lt;EPN Pulsar&gt;,&lt;EPN Freq.&gt;,&lt;Path&gt;,&lt;Parent Dir&gt;,&lt;Size Bits&gt;,&lt;Size GB&gt;,&lt;MD5&gt;</p>
+            <p>There is no CSV header.</p>
+    </div>
+</div>
+<div id ="batch_pop_1" class ="well">
+		<h4> Batch_1.txt </h4>'
+<pre class ="prettyprint">
+<code>
+Description:
+
+This is a fake batch. It contains some example information only.
+
+Tobs: 600
+Tsamp: 64
+Fc: 1400
+Fh: 1500
+Fch1: 1300
+deltav: 78
+B: 200
+Nchan: 1000
+Nbit: 8
+Seed: 1</code>
+</pre>
+<button onclick = "$('#batch_pop_1').popup('hide');" class ="fade_close btn btn-default"> Close </button>
+</div>
+
+<script>
+	$(document).ready(function () {
+		$('#batch_pop_1').popup({
+			transition: 'all 0.3s',
+			scrolllock: true
+		});
+	});
+</script>
+
+
+</body>
+
+</html>
