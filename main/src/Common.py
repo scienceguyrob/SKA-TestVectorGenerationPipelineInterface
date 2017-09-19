@@ -199,22 +199,28 @@ class Common(object):
     # ****************************************************************************************************
 
     @staticmethod
-    def is_path_valid(path):
+    def is_path_valid(pth):
         """
         Checks if a string is a valid path for the operating system the application
         is running upon.
 
         Parameters
         ----------
-        :param path: the path to check for validity.
+        :param pth: the path to check for validity.
 
         Returns
         ----------
         :return: true if the path is valid, else false.
         """
 
-        if path is None:
+        if pth is None:
             return False
+
+        # Check for relative path
+        if os.path.isabs(pth):
+            path = pth
+        else:
+            path = os.path.abspath(pth)
 
         try:
             if Common.is_windows():
@@ -335,19 +341,26 @@ class Common(object):
     # ****************************************************************************************************
 
     @staticmethod
-    def dir_exists(path):
+    def dir_exists(pth):
         """
         Checks a directory exists, returns true if it does, else false.
 
         Parameters
         ----------
-        :param path: the path to the directory.
+        :param pth: the path to the directory.
 
         Returns
         ----------
         True if the directory exists, else false.
 
         """
+
+        # Check for relative path
+        if os.path.isabs(pth):
+            path = pth
+        else:
+            path = os.path.abspath(pth)
+
         if os.path.isdir(path):
             return True
 
