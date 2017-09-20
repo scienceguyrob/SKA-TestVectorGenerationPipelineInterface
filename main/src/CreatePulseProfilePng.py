@@ -36,6 +36,8 @@ from optparse import OptionParser
 import os
 import sys
 import datetime
+import operator
+import numpy
 
 # For common operations.
 from Common import Common
@@ -222,9 +224,10 @@ class CreatePulsarProfilePng(object):
                                             freq = str(file_name_components[1])
 
                                             # Now produce the plot
+                                            centred_data = self.centre_on_peak(data)
                                             fig = plt.figure(figsize=(3, 3))
                                             ax = plt.subplot(111)
-                                            ax.plot(data)
+                                            ax.plot(centred_data)
                                             ax.set_xlim([0, data_points])
                                             ax.set_ylabel('Intensity')
                                             ax.set_xlabel('Bin')
@@ -234,7 +237,7 @@ class CreatePulsarProfilePng(object):
                                             ax.set_xticklabels([])
                                             plt.axis('off')
 
-                                            title = name + ' @: ' + freq + ' MHz'
+                                            title = name + ' @ ' + freq + ' MHz'
                                             plt.title(title)
 
                                             # Now save the image file. If the destination file
@@ -259,6 +262,39 @@ class CreatePulsarProfilePng(object):
         print "\tTotal .asc files found: ", str(ascFileCount)
         print "\tExecution time: ", str(end - start)
         print "Done."
+
+    # ****************************************************************************************************
+
+    def centre_on_peak(self, data):
+        """
+        Centre the data such that the maximum y-axis value is in the
+        centre of the data.
+
+        Parameters
+        ----------
+        :param data: the data to be centred.
+
+        Returns
+        ----------
+        :return: the centred data array.
+        """
+        # Stores the centred data.
+        centred_data = []
+
+        # Get the index of the maximum value.
+        index, value = max(enumerate(data), key=operator.itemgetter(1))
+
+        # Find midpoint of the data.
+        midpoint = int(len(data) / 2)
+
+        # Figure out the shift required to centre the data (put max value in centre bin).
+        n = midpoint - index  # N gives the number of bins the data should be shifted.
+        a = n % len(data)
+
+        # Apply the correction.
+        centred_data = numpy.concatenate([data[-a:], data[:-a]])
+
+        return centred_data
 
     # ****************************************************************************************************
 
